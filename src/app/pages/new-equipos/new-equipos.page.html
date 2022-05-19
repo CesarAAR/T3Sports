@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Equipo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="myForm2">
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Crear</h3>
+         </div>
+         <div padding>
+          <ion-item>
+            <ion-input formControlName="Nombre_Equip" type="text" placeholder="Nombre Equipo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="Responsable" type="text" placeholder="Nombre del Responsable"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="Correo" type="email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="Telefono" type="tel" placeholder="Numero de Telefono"></ion-input>
+          </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="button" [disabled]="!myForm2.valid" (click)="createTM()" expand="block">Guardar</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+    <ion-row color="primary" justify-content-center> 
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <ion-button size="large" type="button"  (click)="onSalir()" expand="block">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

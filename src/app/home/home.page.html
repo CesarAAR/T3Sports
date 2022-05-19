@@ -1,20 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Equipos Registrados
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item-sliding *ngFor="let equip of teams">
+      <ion-label>
+        <h2>
+          <strong>{{equip.Nombre_Equip}}</strong>
+        </h2>
+        <h3>{{equip.Responsable}}</h3>
+        <h3>{{equip.Correo}}</h3>
+        <h3>{{equip.Telefono}}</h3>
+      </ion-label>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block">Crear Nuevo Torneo</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" (click)="onCrearTeam()">Crear Nuevo Equipo</ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>

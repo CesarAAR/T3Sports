@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'new-torneo',
+    loadChildren: () => import('./pages/new-torneo/new-torneo.module').then( m => m.NewTorneoPageModule)
+  },
+  {
+    path: 'new-equipos',
+    loadChildren: () => import('./pages/new-equipos/new-equipos.module').then( m => m.NewEquiposPageModule)
+  },
 ];
 
 @NgModule({
